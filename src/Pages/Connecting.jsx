@@ -1,23 +1,39 @@
+import React, { useState } from 'react';
 import loginBackground from '../images/loginbackground.jpg';
-import callRedImage from '../images/call_red.png';
+import mic from '../images/mic.png';
 
 function Connected() {
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const toggleAnimation = () => {
+    setIsAnimating(!isAnimating);
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-cover bg-no-repeat" style={{backgroundImage: `url(${loginBackground})`}}>
       <div className="glass-window" style={{position: "absolute", top: "50%", left: "50%", right:"30%", width: "100%", height: "100%", transform: "translate(-50%, -50%)", backgroundColor: "rgba(255, 255, 255, 0.6)", padding: "20px", borderRadius: "30px", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)"}}>
-        <div className="user-section" style={{display: "flex", flexDirection: "column", alignItems: "center", marginBottom: "20px", marginTop: "50px"}}>
-          <div className="user-image" style={{position: "relative", width: "170px", marginTop:"50%", height: "170px", borderRadius: "50%", overflow: "hidden"}}>
-            <img src="https://lh3.googleusercontent.com/a/ACg8ocIyTOK0ddMY3aoEXSiGwU75t3O3etBPHZeG1CSsZSHvHKs=s96-c" alt="Login with Google" className="w-40 max-w-xs"/>
-            <section>
-              <div className="pulse">
-                <span style={{'--i': 0}}></span>
-                <span style={{'--i': 1}}></span>
-                <span style={{'--i': 2}}></span>
-                <span style={{'--i': 3}}></span>
-              </div>
-            </section>
-          </div>
-          <div className="searching" style={{marginTop: "30px", color: "black", textAlign: "center", fontSize: "30px", fontWeight: "bold"}}>Searching...</div>
+        <div className="absolute top-0 left-0 w-full text-center">
+          <p className="text-black font-bold text-4xl mt-10">Find Someone Online</p>
+        </div>
+        <div className="pulse absolute inset-0 flex items-center justify-center">
+          {/* Pulse Animation */}
+          {isAnimating && (
+            <>
+              <span className="block w-70 h-70 bg-blue-500 rounded-full opacity-80 animate-pulse" style={{ zIndex: 1, position: 'absolute' }}></span>
+              <span className="block w-60 h-60 bg-blue-500 rounded-full opacity-80 animate-pulse" style={{ zIndex: 1, position: 'absolute' }}></span>
+              <span className="block w-50 h-50 bg-blue-500 rounded-full opacity-80 animate-pulse" style={{ zIndex: 1, position: 'absolute' }}></span>
+              <span className="block w-40 h-40 bg-blue-500 rounded-full opacity-80 animate-pulse" style={{ zIndex: 1, position: 'absolute' }}></span>
+              <span className="block w-30 h-30 bg-blue-500 rounded-full opacity-80 animate-pulse" style={{ zIndex: 1, position: 'absolute' }}></span>
+              <span className="block w-20 h-20 bg-blue-500 rounded-full opacity-80 animate-pulse" style={{ zIndex: 1, position: 'absolute' }}></span>
+              <span className="block w-10 h-10 bg-blue-500 rounded-full opacity-80 animate-pulse" style={{ zIndex: 1, position: 'absolute' }}></span>
+            </>
+          )}
+          
+          {/* Mic Button */}
+          <img src={mic} alt="Mic Button" className="w-40 h-40 absolute inset-0 m-auto z-10 cursor-pointer" onClick={toggleAnimation} />
+        </div>
+        <div className="absolute bottom-20 left-0 w-full text-center">
+          <p className="text-black font-bold text-4xl mb-12">Search</p>
         </div>
       </div>
     </div>
