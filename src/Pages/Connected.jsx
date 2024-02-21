@@ -1,5 +1,9 @@
 import loginBackground from '../images/loginbackground.jpg';
 import callRedImage from '../images/call_red.png';
+import buttonImage1 from '../images/profile.png'; 
+import buttonImage2 from '../images/chat.png';
+import buttonImage3 from '../images/setting.png';
+import buttonImage4 from '../images/call.png';
 
 function Connected() {
   return (
@@ -11,8 +15,22 @@ function Connected() {
           </div>
           <div className="user-name" style={{marginTop: "30px", color: "black", textAlign: "center", fontSize: "30px", fontWeight: "bold"}}>User Name</div>
         </div>
-        <button className="call-end-button" style={{position: "absolute", bottom: "20px", left: "50%", width:"20%", maxWidth: "100px", transform: "translateX(-50%)", border: "none", background: "none", padding: 0, cursor: "pointer"}}>
+        <button className="call-end-button" style={{position: "absolute", bottom: "60px", left: "50%", width:"20%", maxWidth: "100px", transform: "translateX(-50%)", border: "none", background: "none", padding: 0, cursor: "pointer"}}>
           <img src={callRedImage} alt="Call End Button" style={{width: "100%", height: "auto"}} />
+        </button>
+      </div>
+      <div className="flex justify-around w-full py-2 absolute bottom-0">
+        <button>
+          <img src={buttonImage1} alt="Profile" className="w-10 h-10" />
+        </button>
+        <button>
+          <img src={buttonImage4} alt="Chat" className="w-10 h-10" />
+        </button>
+        <button>
+          <img src={buttonImage2} alt="Call" className="w-10 h-10" />
+        </button>
+        <button>
+          <img src={buttonImage3} alt="Setting" className="w-12 h-12" />
         </button>
       </div>
     </div>

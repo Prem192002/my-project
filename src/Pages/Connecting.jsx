@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import loginBackground from '../images/loginbackground.jpg';
 import mic from '../images/mic.png';
+import buttonImage1 from '../images/profile.png'; 
+import buttonImage2 from '../images/chat.png';
+import buttonImage3 from '../images/setting.png';
+import buttonImage4 from '../images/call.png';
 
 function Connected() {
   const [isAnimating, setIsAnimating] = useState(false);
@@ -35,6 +39,20 @@ function Connected() {
         <div className="absolute bottom-20 left-0 w-full text-center">
           <p className="text-black font-bold text-4xl mb-12">Search</p>
         </div>
+      </div>
+      <div className="flex justify-around w-full py-2 absolute bottom-0">
+        <button>
+          <img src={buttonImage1} alt="Profile" className="w-10 h-10" />
+        </button>
+        <button>
+          <img src={buttonImage4} alt="Chat" className="w-10 h-10" />
+        </button>
+        <button>
+          <img src={buttonImage2} alt="Call" className="w-10 h-10" />
+        </button>
+        <button>
+          <img src={buttonImage3} alt="Setting" className="w-12 h-12" />
+        </button>
       </div>
     </div>
   );

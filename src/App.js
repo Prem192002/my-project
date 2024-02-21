@@ -4,7 +4,8 @@ import Profile from "./Pages/Profile";
 import Form from "./Pages/Form"
 import Connected from "./Pages/Connected";
 import Connecting from "./Pages/Connecting";
-
+import ChatRoom from "./Pages/Chatroom";
+import Chatlist from "./Pages/Chatlist";
 
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
       <Route path="/form" eaxct element={<Form/>} />
       <Route path="/connected" eaxct element={<Connected/>} />
       <Route path="/connecting" eaxct element={<Connecting/>} />
+      <Route path="/chatroom" eaxct element={<ChatRoom/>} />
+      <Route path="/chatlist" eaxct element={<Chatlist/>} />
     </Routes>
 
     </>
