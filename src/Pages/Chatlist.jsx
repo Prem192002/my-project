@@ -37,7 +37,7 @@ const Chatlist = () => {
       online : true  
 
     },
-    // Add more users as needed
+    
   ];
 
   return (
