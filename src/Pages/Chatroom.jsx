@@ -76,7 +76,7 @@ const ChatRoom = () => {
         profilePic: "https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp",
         online: true,
       },
-    // Add more users as needed
+    
   ];
 
   const a = true;
